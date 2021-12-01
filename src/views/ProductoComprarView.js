@@ -5,34 +5,59 @@ import { obtenerProductoPorId } from "../service/DataService";
 import ReactImageMagnify from "react-image-magnify";
 import { Link, useNavigate } from "react-router-dom";
 import { CarritoContext } from "../context/carritoContext";
-import "../css/VistaProduct.css"
+import "../css/VistaProduct.css";
+import Cargando from "../components/Cargando";
+import Swal from "sweetalert2";
+
 const ProductoComprarView = () => {
   const [producto, setProducto] = useState(null);
   const [cantidad, setCantidad] = useState(1);
   const { id } = useParams();
+  const navigate = useNavigate();
+  const [loading, setLoading] = useState(true);
+  const { anadirCarrito } = useContext(CarritoContext);
 
-  const {anadirCarrito} = useContext(CarritoContext)
-
-  const anadirCarritoContext=() =>{
-    const {id, nombre,precio} = producto
+  const anadirCarritoContext = () => {
+    const { id, nombre, precio } = producto;
     const nuevoProducto = {
       id,
       nombre,
       precio,
       cantidad,
-    }
-    anadirCarrito(nuevoProducto)
-  }
+    };
+    anadirCarrito(nuevoProducto);
+  };
 
   const getProducto = async () => {
+    let prodObtenido
     try {
       const prodObtenido = await obtenerProductoPorId(id);
       setProducto(prodObtenido);
+      setLoading(false)
       console.log(prodObtenido);
+      // if (typeof prodObtenido === "undefined") {
+      //   Swal.fire({
+      //     icon: "error",
+      //     title: "Oops...",
+      //     text: "Producto no encontrado!",
+      //     showConfirmButton: false,
+      //     timer: 1500,
+      //   });
+      //   navigate("/productos");
+      // };
     } catch (error) {
       console.log(error);
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        // text: "Producto no encontrado!",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+      navigate("/productos");
     }
-  };
+    console.log(prodObtenido)
+  }
   useEffect(() => {
     getProducto();
   }, []);
@@ -41,10 +66,12 @@ const ProductoComprarView = () => {
       return; //corta la ejecución
     }
     setCantidad(cantidad + numero);
-};
+  };
   return (
     <>
-      {producto ? (
+      {loading === true ? (
+        <Cargando />
+      ) : (
         <div
           id="contenedor"
           className=" d-flex flex-lg-row align-items-center justify-content-center flex-sm-column flex-xs-column"
@@ -93,19 +120,22 @@ const ProductoComprarView = () => {
                 <i className="fas fa-plus"></i>
               </button>
             </div>
-              <button
-                className="btn btn-outline-dark px-4 py-2 my-2 "
-               onClick={anadirCarritoContext}
-              >
-                <i className="fas fa-cart-plus"></i> Agregar a carrito
-              </button>
-              <Link to="/checkout" onClick={anadirCarritoContext} className="btn btn-outline-success px-4 py-2 ms-3">
-              Comprar Ya! 
-              </Link>
-           
+            <button
+              className="btn btn-outline-dark px-4 py-2 my-2 "
+              onClick={anadirCarritoContext}
+            >
+              <i className="fas fa-cart-plus"></i> Agregar a carrito
+            </button>
+            <Link
+              to="/checkout"
+              onClick={anadirCarritoContext}
+              className="btn btn-outline-success px-4 py-2 ms-3"
+            >
+              Comprar Ya!
+            </Link>
           </div>
         </div>
-      ) : null}
+      )}
     </>
   );
 };
