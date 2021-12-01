@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext ,useRef } from "react";
 import Swal from "sweetalert2";
 import { CarritoContext } from "../../context/carritoContext";
 import "./navigation.css";
@@ -13,14 +13,24 @@ import {
   NavDropdown,
 } from "react-bootstrap";
 /* import './Navbar.css' */
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
+
+
 function Navigation() {
+
+  const refBuscar = useRef();
+  const navigate = useNavigate();
+
   const { currentUser, logout } = useContext(AuthContext);
   const { carrito } = useContext(CarritoContext);
   const totalCarrito = carrito.reduce((total, prod) => {
     return total + prod.cantidad;
   }, 0);
+  const manejarBusqueda = (e) => {
+    // e.preventDefault() 
+    navigate(`/productos/${refBuscar.current.value}`);
+};
   async function handleLogout() {
     // e.preventDefault();
     try {
@@ -64,14 +74,15 @@ function Navigation() {
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Form className="d-flex">
+            <Form className="d-flex" onSubmit={manejarBusqueda}>
               <FormControl
                 type="search"
                 placeholder="Search"
                 className="me-2"
                 aria-label="Search"
+                ref={refBuscar}
               />
-              <Button variant="outline-success">
+              <Button variant="outline-success" type="submit" onClick={manejarBusqueda}>
                 <i className="fa fa-search" aria-hidden="true"></i>
               </Button>
             </Form>

@@ -3,9 +3,9 @@ import axios from "axios";
 //esta url e de mocp api
 const URL = `${process.env.REACT_APP_API}Productos`;
 
-const LaData = async () => {
+const LaData = async (busqueda = "") => {
   try {
-    const { data } = await axios.get(URL);
+    const { data } = await axios.get(`${URL}?search=${busqueda}`);
     // console.log('data de '  ,data)
     return data
   } catch (error) {

@@ -1,4 +1,3 @@
-
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import ProductosListaView from "./views/ProductosListaView";
@@ -19,9 +18,9 @@ import RutaPrivadaUser from "./components/RutaPrivadaUser";
 import ContrasenaView from "./views/ContrasenaView";
 import CheckOutView from "./views/CheckOutView";
 import Footer from "./components/Footer";
-import HomeView from "./views/HomeView"
-import FooterView from "./views/FooterView"
-
+import HomeView from "./views/HomeView";
+import FooterView from "./views/FooterView";
+import ProductosBuscar from "./views/ProductosBuscar";
 
 function App() {
   return (
@@ -29,9 +28,9 @@ function App() {
       <CarritoContextProvider>
         <Router>
           <Navigation />
-          
+
           <Routes>
-          <Route path="/" element={<HomeView />} />
+            <Route path="/" element={<HomeView />} />
             <Route path="/home" element={<HomeView />} />
             <Route path="*" element={<NotFoundView />} />
             <Route path="/carrito" element={<CarritoView />} />
@@ -41,26 +40,30 @@ function App() {
               element={<ProductoComprarView />}
             />
             <Route
-              path="/ContrasenaOlvidada"
-              element={<ContrasenaView />}
+              path="/productos/:busqueda"
+              element={<ProductosBuscar />}
             />
-            <Route path="/checkout" element={
-              
-                <CheckOutView/>
-              
-            }/>
-            <Route path="/login" element={
-              <PrivateRoute>
-                <LoginView />
-              </PrivateRoute>} />
-              <Route path="/register" element={
-              <PrivateRoute>
-                <RegisterView/>
-               
-              </PrivateRoute>} />
+            <Route path="/ContrasenaOlvidada" element={<ContrasenaView />} />
+            <Route path="/checkout" element={<CheckOutView />} />
+            <Route
+              path="/login"
+              element={
+                <PrivateRoute>
+                  <LoginView />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="/register"
+              element={
+                <PrivateRoute>
+                  <RegisterView />
+                </PrivateRoute>
+              }
+            />
           </Routes>
           <FooterView />
-          <Footer/>
+          <Footer />
         </Router>
       </CarritoContextProvider>
     </AuthProvider>
