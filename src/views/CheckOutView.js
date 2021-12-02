@@ -81,9 +81,9 @@ export default function CheckOutView() {
                   <div className="col-12 col-md-4 card">
                     {total > 0 ? (
                       <>
-                      <h3>Resumen</h3>
+                      <h3 className="mt-4 fw-ligth">Resumen</h3>
                       <hr/>
-                      <div className=" d-flex justify-content-between ">
+                      <div className=" d-flex justify-content-between my-2 ">
                         <span className="">Sub total:</span>
                         <span>S/ {total.toFixed(2)}</span>
                       </div>
@@ -97,14 +97,14 @@ export default function CheckOutView() {
                       <div>Todavía no ha agregado ningún producto.</div>
                       )}
                       <hr/>
-                      <Button onClick={manejarContinuar} className="btn btn-lg btn-outline-secondary m-4"> Continuar</Button>
+                      <Button onClick={manejarContinuar} className="btn btn-lg btn-outline-secondary mt-4"> Continuar</Button>
                   </div>
                 </div>
               </Tab>
               <Tab eventKey="envio" title="Envio" disabled>
                       <Formulario/>
               </Tab>
-              {/* <Tab eventKey="contact" title="Contact" disabled></Tab> */}
+              <Tab eventKey="contact" title="Pagar" disabled></Tab>
             </Tabs>
 
             
