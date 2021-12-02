@@ -18,12 +18,13 @@ const ProductoComprarView = () => {
   const { anadirCarrito } = useContext(CarritoContext);
 
   const anadirCarritoContext = () => {
-    const { id, nombre, precio } = producto;
+    const { id, nombre, precio,imagen } = producto;
     const nuevoProducto = {
       id,
       nombre,
       precio,
       cantidad,
+      imagen
     };
     anadirCarrito(nuevoProducto);
   };

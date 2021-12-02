@@ -30,6 +30,7 @@ export default function ProductoCard({item}) {
         <div class="col-md-4  ">
           <div className="card mt-3">
             <div className="product-1 align-items-center p-2 text-center border ">
+        <Link to={`/detalleproducto/${id}`}  className="text-decoration-none text-dark  ">
               <img src={imagen} alt={nombre} class="card-img-top  mb-2" width="80%" height="30%" />
               <h5>{nombre}</h5>
   
@@ -40,9 +41,12 @@ export default function ProductoCard({item}) {
                   <span>S/{precio}</span>
                 </div>
                 <div>
-                  <Link to={`/detalleproducto/${id}`} className="btn btn-outline-info">
+                  </div>
+                </div>
+                  {/* <Link to={`/detalleproducto/${id}`} className="btn btn-outline-info">
                       Comprar
-                  </Link>
+                  </Link> */}
+          </Link>
                   <button
                     className="btn btn-outline-dark mx-2 m-md-2"
                     onClick={anadirCarritoContext}
@@ -50,8 +54,6 @@ export default function ProductoCard({item}) {
                     Agregar al Carrito
                   </button>
                 </div>
-              </div>
-            </div>
           </div>
         </div>
       </>
