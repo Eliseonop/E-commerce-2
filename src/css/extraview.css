@@ -1,0 +1,154 @@
+
+#extra {
+    position: relative;
+    min-height: 100vh;
+    background: rgb(34,193,195);
+    background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(255,179,0,1) 100%);    
+    margin:0;
+    padding: 0px;
+    
+}
+#aboutview {
+    position: inherit;
+    top:50%;     
+    margin:0px 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: background-color .5s;
+    border-radius: 30% 70% 70% 30% / 49% 30% 70% 51% 
+    
+}
+#aboutview:hover {
+    background-color: rgb(69, 194, 20,0.3);
+
+
+}
+
+#cambiosview {
+    position:realtive;
+    top: 10%;    
+    margin:0px 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: background-color .5s;
+    border-radius: 30% 70% 22% 78% / 49% 27% 73% 51% ;
+}
+
+#cambiosview:hover {
+    background-color: rgb(69, 194, 20,0.3);
+}
+
+#comocomprarview {
+    position:realtive;
+    top: 10%;   
+    margin:0px 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: background-color .5s;
+    border-radius: 30% 70% 78% 22% / 49% 14% 86% 51% ;
+}
+
+#comocomprarview:hover {
+    background-color: rgb(69, 194, 20,0.3);
+}
+
+#contactoview {
+    position: inherit;
+    top:50%;    
+    margin:0px 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: background-color .5s;
+    border-radius: 60% 40% 58% 42% / 49% 82% 18% 51% 
+
+}
+
+#contactoview:hover {
+    background-color: rgb(69, 194, 20,0.3);
+}
+
+
+#enviosview {
+    position:realtive;
+    top: 10%;
+    margin:0px 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: background-color .5s;
+    border-radius: 60% 40% 88% 12% / 49% 20% 80% 51% 
+
+}
+
+#enviosview:hover {
+    background-color: rgb(69, 194, 20,0.3);
+}
+
+#legalesview {
+    position: inherit;
+    top:100px;    
+    margin:0px 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: background-color .5s;
+    border-radius: 60% 40% 15% 85% / 21% 20% 80% 79% 
+
+}
+
+#legalesview:hover {
+    background-color: rgb(69, 194, 20,0.3);
+}
+
+#formasview {
+    position: inherit;
+    top:100px;    
+    margin:0px 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: background-color .5s;
+    border-radius: 22% 78% 15% 85% / 67% 55% 45% 33% 
+
+}
+
+#formasview:hover {
+    background-color: rgb(69, 194, 20,0.3);
+}
+
+#cookiesview {
+    position:realtive;
+    top: 10%;
+    margin:0px 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: background-color .5s;
+    border-radius: 22% 78% 53% 47% / 88% 22% 78% 12% 
+
+}
+
+#cookiesview:hover {
+    background-color: rgb(69, 194, 20,0.3);
+}
+
+#preguntasview {
+    
+    position:realtive;
+    top: 10%;
+    margin:0px 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: background-color .5s;
+    border-radius: 32% 68% 46% 54% / 22% 22% 78% 78% 
+
+}
+
+#preguntasview:hover {
+    background-color: rgb(69, 194, 20,0.3);
+}

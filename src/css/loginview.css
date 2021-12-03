@@ -1,0 +1,13 @@
+#login {
+    min-height: 100vh;
+    max-width: 100%;
+    background-color: rgb(240, 240, 240);
+    
+}
+
+#logincontent {
+    position: inherit;
+    padding: 4%;
+    margin-top: 0px;
+    margin-bottom: 0px;   
+}

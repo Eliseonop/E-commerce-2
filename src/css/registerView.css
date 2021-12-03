@@ -1,0 +1,15 @@
+
+#register {
+    position:inherit;
+    min-height: 100vh;
+    max-width: 100%;
+    background-color: rgb(240, 240, 240)
+}
+
+#registerviewcontent {
+    position: inherit;
+    padding: 10%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+
+}

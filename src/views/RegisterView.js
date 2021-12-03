@@ -3,6 +3,7 @@ import Swal from "sweetalert2";
 import { AuthContext } from "../context/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
 import Cargando from "../components/Cargando";
+import "../css/registerView.css";
 export default function RegisterView() {
   const navigate = useNavigate();
   const { signup } = useContext(AuthContext);
@@ -51,71 +52,71 @@ export default function RegisterView() {
   }
 
   return (
-    <>
+    <register>
       {loading === true ? (
         <Cargando />
       ) : (
-    <div className="container">
-      <div className="row my-5 d-flex justify-content-center mt-5">
-        <div>
-          <h1 className="text-center">Registrar</h1>
-        </div>
+        <div className="container" id="register">
+          <div className="row  d-flex justify-content-center " id="registerviewcontent">
+            <div>
+              <h1 className="text-center">Registrar</h1>
+            </div>
 
-        <form
-          onSubmit={handleSubmit}
-          className="col-lg-3 col-md-6 col-9  my-3 "
-        >
-          <div className="col-lg-12">
-            <label for="inputEmail4" className="form-label">
-              Email
-            </label>
-            <input
-              type="email"
-              name="email"
-              className="form-control"
-              id="inputEmail4  "
-              placeholder="Ingrese email"
-              value={form.email}
-              onChange={handleChange}
-              autoComplete="off"
-            />
-          </div>
-          <div className="col-lg-12 ">
-            <label for="inputPassword4" name="password" className="form-label">
-              Password
-            </label>
-            <input
-              type="password"
-              name="password"
-              className="form-control"
-              id="inputPassword4"
-              placeholder="Ingrese su contraseña"
-              value={form.password}
-              onChange={handleChange}
-              autoComplete="off"
-              required
-            />
-          </div>
-          {/* sadadasdasdad */}
-
-          <div className="col-lg-12  mt-3 text-center border">
-            <button
-              type="submit"
-              className="btn btn-outline-warning   mt-3"
-              disabled={loading}
+            <form
+              onSubmit={handleSubmit}
+              className="col-lg-3 col-md-6 col-9  my-3 "
             >
-              Registrarse
-            </button>
-            <p>
-              Ya tienes cuenta?{" "}
-              <Link to="/login">
-                <span>Inicia Sesión</span>
-              </Link>
-            </p>
+              <div className="col-lg-12">
+                <label for="inputEmail4" className="form-label">
+                  Email
+                </label>
+                <input
+                  type="email"
+                  name="email"
+                  className="form-control"
+                  id="inputEmail4  "
+                  placeholder="Ingrese email"
+                  value={form.email}
+                  onChange={handleChange}
+                  autoComplete="off"
+                />
+              </div>
+              <div className="col-lg-12 ">
+                <label for="inputPassword4" name="password" className="form-label">
+                  Password
+                </label>
+                <input
+                  type="password"
+                  name="password"
+                  className="form-control"
+                  id="inputPassword4"
+                  placeholder="Ingrese su contraseña"
+                  value={form.password}
+                  onChange={handleChange}
+                  autoComplete="off"
+                  required
+                />
+              </div>
+              {/* sadadasdasdad */}
+
+              <div className="col-lg-12  mt-3 text-center border">
+                <button
+                  type="submit"
+                  className="btn btn-outline-warning   mt-3"
+                  disabled={loading}
+                >
+                  Registrarse
+                </button>
+                <p>
+                  Ya tienes cuenta?{" "}
+                  <Link to="/login">
+                    <span>Inicia Sesión</span>
+                  </Link>
+                </p>
+              </div>
+            </form>
           </div>
-        </form>
-      </div>
-    </div>)}
-    </>
+        </div>)}
+    </register>
   );
 }

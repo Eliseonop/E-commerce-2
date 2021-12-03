@@ -2,6 +2,7 @@ import React,{useState,useContext} from 'react'
 import { Link } from 'react-router-dom';
 import { CarritoContext } from "../context/carritoContext";
 import Swal from 'sweetalert2';
+// import { height, minHeight } from '@mui/system';
 export default function ProductoCard({item}) {
     const { id, nombre, descripcion, precio, imagen } = item;
     const [cantidad, setCantidad] = useState(1);
@@ -24,14 +25,18 @@ export default function ProductoCard({item}) {
       })
       anadirCarrito(nuevoProducto)
     }
-
+    const imgStiles = {
+      minHeight: '44vh',
+      maxHeight: '260px',
+      objectFit: 'cover'
+    }
     return (
       <>
         <div class="col-md-4  ">
           <div className="card mt-3">
             <div className="product-1 align-items-center p-2 text-center border ">
         <Link to={`/detalleproducto/${id}`}  className="text-decoration-none text-dark  ">
-              <img src={imagen} alt={nombre} class="card-img-top  mb-2" width="80%" height="30%" />
+              <img src={imagen} alt={nombre} style={imgStiles} class="card-img-top border  mb-2" width="80%" height="30%" />
               <h5>{nombre}</h5>
   
               <div className="mt-3 info">

@@ -1,0 +1,20 @@
+#contactos {
+    position:inherit;
+    min-height: 100vh;
+    max-width:  100%;
+    background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+    color:aliceblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;    
+}
+
+#containercontacto {
+    width: 80vh;
+    transition-delay: border-right .5s ,border-radiu .5
+}
+
+#containercontacto:hover {
+    border-right: 6px outset rgba(255,233,0,0.34);
+    border-radius: 0px 27px 28px 0px;
+}

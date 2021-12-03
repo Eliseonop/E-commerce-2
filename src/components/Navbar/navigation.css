@@ -2,7 +2,7 @@ div {
     font-family: 'Space Mono', monospace;
 }
 
-p {
+#nav{
     padding-top: 10px;
     transition: background-color .5s;
     border-radius: 60px;
@@ -18,7 +18,12 @@ box-shadow:  35px -35px 100px #cfd3d7,
              -35px 35px 100px #f9fdff;
 }
 
-p:hover {
-    box-shadow:  35px -35px 100px #cfd3d7,
+#nav:hover {
+    box-shadow:  35px -35px 100px #a4a7aa,
     -35px 35px 100px #f9fdff;
+}
+
+#navbar {
+    margin: 0px;
+    padding: 0px
 }

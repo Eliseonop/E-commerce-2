@@ -3,6 +3,7 @@ import Swal from "sweetalert2";
 import { AuthContext } from "../context/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
 import Cargando from "../components/Cargando";
+import "../css/loginview.css"
 export default function LoginView() {
   const { login, currentUser, signInGoogle } = useContext(AuthContext);
   const navigate = useNavigate();
@@ -74,8 +75,8 @@ export default function LoginView() {
       {loading === true ? (
         <Cargando />
       ) : (
-        <div className="container">
-          <div className="row d-flex justify-content-center mt-5" maxW>
+        <div className="container" id="login">
+          <div className="row d-flex justify-content-center " id="logincontent"  >
             <div clasName="d-flex align-items-center ">
               <h1 className="text-center mb-2">Acceder</h1>
             </div>
