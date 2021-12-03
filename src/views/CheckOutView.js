@@ -69,9 +69,9 @@ export default function CheckOutView() {
                             <h6 className="fw-bold">{prod.nombre}</h6>
                             <small>Cantidad: {prod.cantidad}</small>
                           </div>
-                          <div className="badge bg-dark rounded-pill p-4">
-                            {/* toFixed(entero), me permite manejar decimales en un número */}
-                            S/ {(prod.cantidad * prod.precio).toFixed(2)}
+                          <div className="badge text-dark text-decoration-underline   pt-3">
+                            {/* toFixed(entero), me permite manejar decimales> en un número */}
+                            <h5>S/ {(prod.cantidad * prod.precio).toFixed(2)}</h5>
                           </div>
                         </li>
                       ))}
