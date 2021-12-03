@@ -152,7 +152,7 @@ const Formulario = () => {
 
                   <button
                     type="submit"
-                    className="btn btn-dark btn-lg my-3 col-3 m-auto"
+                    className="btn btn-dark btn-lg my-3 col-sm-8 col-9 col-md-6 m-auto"
                     disabled={carrito.length <= 0}
                   >
                     Comprar
