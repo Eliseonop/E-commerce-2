@@ -40,6 +40,7 @@ export default function CheckOutView() {
       setKey("envio");
     }
   };
+  
   return (
     <>
       {loading === true ? (
@@ -50,6 +51,7 @@ export default function CheckOutView() {
             <h2>
               <i className="fas fa-user-lock mb-2"></i> COMPRA SEGURA
             </h2>
+            
             <Tabs
               id="controlled-tab-example"
               activeKey={key}
@@ -95,7 +97,7 @@ export default function CheckOutView() {
                         <hr />
                         <Button
                           onClick={manejarContinuar}
-                          className="btn btn-lg btn-outline-secondary mt-4"
+                          className="btn btn-lg btn-outline-secondary my-2"
                         >
                           {" "}
                           Continuar

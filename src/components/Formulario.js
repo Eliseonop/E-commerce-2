@@ -7,7 +7,7 @@ import { CarritoContext } from '../context/carritoContext';
 import { guardarVenta } from '../service/VentasService';
 import { useForm } from "react-hook-form"; //useForm es un hook personalizado, para manejar formularios
 const Formulario = () => {
-    const { carrito } = useContext(CarritoContext);
+    const { carrito,limpiarCarrito } = useContext(CarritoContext);
     
   const { currentUser } = useContext(AuthContext);
 
@@ -28,12 +28,15 @@ const Formulario = () => {
       const recibirSubmit = async (data) => {
         setLoading(true);
         const poder = currentUser === null ? false : true;
-    
+        const fecha = new Date().toLocaleString()
+       
         try {
           let nuevaVenta = {
             ...data, //nombreCompleto, telefono, email, direccion
             productos: carrito,
             total,
+            fecha:fecha,
+            
           };
           if (poder) {
             await guardarVenta(nuevaVenta);
@@ -44,7 +47,8 @@ const Formulario = () => {
               showConfirmButton: true,
               text: "Revise su correo para ver el metodo de pago",
             });
-            reset();
+            reset()
+            // limpiarCarrito();
           } else {
             setLoading(false);
             Swal.fire({
@@ -61,6 +65,9 @@ const Formulario = () => {
       };
     
     return (
+      <>{loading === true ? (
+        <Cargando />
+      ) : (
         <div>
              <div className="col-12 col-md-12">
                 <form onSubmit={handleSubmit(recibirSubmit)} className="row">
@@ -159,7 +166,8 @@ const Formulario = () => {
                   </button>
                 </form>
               </div>
-        </div>
+        </div>)}
+        </>
     )
 }
 
