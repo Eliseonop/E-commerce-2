@@ -1,17 +1,14 @@
-* {
-    margin: 0;
-    padding: 0;
-  }
+
 
 figcaption {
-    position: absolute;
-    bottom: 30%;
+    position: relative;
     left: 5%;
+    bottom:30rem;
     color: #fff;
-    margin-left: 5%;
-    font-size: 2rem; 
     transition: background-color .5s;
-    border-radius: 5px
+    border-radius: 5px;
+    z-index: 15;
+    max-width:30%
     
 }
 
@@ -21,7 +18,8 @@ figcaption:hover {
 }
 
 #figcaption {
-    padding:0px
+    padding:0px;
+    margin: 0px
 }
 
 
@@ -33,7 +31,7 @@ figcaption:hover {
 @media screen and (max-width:992px) {
     figcaption {
         position: realtive;
-        bottom: 50%;
+        bottom: 20rem;
         color: #fff;
         margin-left: 5%;
         font-size: 1rem;
@@ -44,18 +42,17 @@ figcaption:hover {
 @media screen and (max-width: 767px) {
     figcaption {
         position: realtive;
-        bottom: 50%;
+        bottom: 15rem;
         color: #fff;
-        margin-left: 5%;
+
         font-size: 0.5rem;
     }
 }
 @media screen and (max-width: 480px) {
     figcaption {
         position: realtive;
-        bottom: 60%;
+        bottom: 10rem;
         color: #fff;
-        margin-left: 5%;
         font-size: 0.5rem;
     }
-}
+} 
