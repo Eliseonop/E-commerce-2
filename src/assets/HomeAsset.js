@@ -5,9 +5,9 @@ const bannerText = {
 
 const urlbanner ={
     //imagenes de carousel
-    url1: "https://images.unsplash.com/photo-1629960717522-0bcd369d6f5d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80",
-    url2: "https://images.alphacoders.com/458/thumb-1920-458523.jpg",
-    url3: "https://images4.alphacoders.com/241/thumb-1920-241944.jpg"
+    url1: "	https://cdn.pixabay.com/photo/2016/08/01/20/15/girl-1562025_960_720.jpg",
+    url2: "		https://images2.alphacoders.com/999/thumb-1920-999227.jpg ",
+    url3: "https://images2.alphacoders.com/984/thumb-1920-984198.jpg"
 }
 
 export {bannerText, urlbanner}
