@@ -16,7 +16,7 @@ export default function Homeview() {
         bottom: '2rem'
     }
     return (
-        <div id="divcontainerhome">
+        <div className="container" id="divcontainerhome">
             {/*             <banner className="position-relative"   >
                 <img
                     id="bannerimage"
@@ -36,7 +36,7 @@ export default function Homeview() {
             </banner> */}
             
 
-            <Carousel className="position-relative w-100 h-100" >
+            <Carousel className="position-relative" >
                 <Carousel.Item>
                     <img
                         className="d-block w-100"
@@ -65,7 +65,7 @@ export default function Homeview() {
 
                 </Carousel.Item>
             </Carousel>
-            <Link id="figcaption" className="nav-link h-25 bg-primary position-sticky" to="/productos">
+            <Link id="figcaption" className="nav-link" to="/productos">
                 <figcaption>
                     
                     <h3>

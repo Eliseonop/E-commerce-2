@@ -10,7 +10,10 @@
 }
 
 #containercontacto {
-    width: 80%;
+    position: inherit;
+    max-width: 100vh;
+    background-color:rgba(108, 93, 119, 0.275);
+    border-radius: 10px;
     transition-delay: border-right .5s ,border-radiu .5
 }
 

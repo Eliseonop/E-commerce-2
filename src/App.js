@@ -22,6 +22,7 @@ import Footer from "./components/Footer";
 import HomeView from "./views/HomeView"
 import Contacto from "./views/Contacto"
 
+
 //extrasviwe
 import Aboutview from "./extra/Aboutview"
 import CambioyDevolucionesview from "./extra/CambioyDevolucionesview"
@@ -83,6 +84,7 @@ function App() {
           </Routes>
           <Contacto/>       
           <Footer/>
+        
         </Router>
       </CarritoContextProvider>
     </AuthProvider>

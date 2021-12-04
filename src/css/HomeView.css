@@ -1,6 +1,11 @@
+#divcontainerhome {
+    position: relative;
+    max-height: 120VH;
+    max-width: 100%;
+    padding: 0px;
+}
 
-
-figcaption {
+/* figcaption {
     position: relative;
     left: 5%;
     bottom:30rem;
@@ -10,7 +15,7 @@ figcaption {
     z-index: 15;
     max-width:30%
     
-}
+} */
 
 
 figcaption:hover {
@@ -18,8 +23,14 @@ figcaption:hover {
 }
 
 #figcaption {
-    padding:0px;
-    margin: 0px
+    position: relative;
+    left: 5%;
+    bottom:25rem;
+    color: #fff;
+    transition: background-color .5s;
+    border-radius: 5px;
+    z-index:0;
+    max-width:30%
 }
 
 
@@ -29,30 +40,96 @@ figcaption:hover {
 }
 
 @media screen and (max-width:992px) {
-    figcaption {
+    #figcaption {
         position: realtive;
-        bottom: 20rem;
+        bottom: 22rem;
         color: #fff;
         margin-left: 5%;
         font-size: 1rem;
 
     }
+    #divcontainerhome {
+        position: relative;
+        max-height: 100vh;
+        max-width: 100%;
+        padding: 0px;
+    }
+    
 }
 
+@media screen and (max-width: 798px) {
+    #divcontainerhome {
+        position: relative;
+        max-height: 75vh;
+        max-width: 100%;
+        padding: 0px;
+    }
+};
+    
+
 @media screen and (max-width: 767px) {
-    figcaption {
+    #figcaption {
         position: realtive;
         bottom: 15rem;
         color: #fff;
 
         font-size: 0.5rem;
     }
+    #divcontainerhome {
+        position: relative;
+        max-height: 75vh;
+        max-width: 100%;
+        padding: 0px;
+    }
 }
+
+@media screen and (max-width: 772px) {
+    #divcontainerhome {
+        position: relative;
+        max-height: 75vh;
+        max-width: 100%;
+        padding: 0px;
+    }
+}
+
+@media screen and (max-width: 636px) {
+    #divcontainerhome {
+        position: relative;
+        max-height: 75vh;
+        max-width: 100%;
+        padding: 0px;
+    }
+}
+
+@media screen and (max-width: 626px) {
+    #divcontainerhome {
+        position: relative;
+        max-height: 70vh;
+        max-width: 100%;
+        padding: 0px;
+    }
+}
+
+@media screen and (max-width: 568px) {
+    #divcontainerhome {
+        position: relative;
+        max-height: 60vh;
+        max-width: 100%;
+        padding: 0px;
+    }
+}
+
 @media screen and (max-width: 480px) {
-    figcaption {
+    #figcaption {
         position: realtive;
-        bottom: 10rem;
+        bottom: 15rem;
         color: #fff;
         font-size: 0.5rem;
+    }
+    #divcontainerhome {
+        position: relative;
+        max-height: 35vh;
+        max-width: 100%;
+        padding: 0px;
     }
 } 

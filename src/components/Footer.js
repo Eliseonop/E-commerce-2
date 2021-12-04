@@ -77,12 +77,6 @@ function Footer() {
               </Link>
             </ui>
           </div>
-          <div className="col">
-            <h4 className="text-center">Libro de Reclamaciones</h4>
-            <div className="text-center">
-              <MenuBookIcon />
-            </div>
-          </div>
         </div>
         <hr />
         <div className="row">
