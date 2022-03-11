@@ -19,11 +19,14 @@ const CarritoContextProvider = ({ children }) => {
   const limpiarCarrito = () => {
     setCarrito([]);
   };
-  useEffect(() => {
+  const carritoStorageFunc = () => {
     const carritoStorage = JSON.parse(localStorage.getItem("carritoApp"));
     if (carritoStorage.length > 0) {
       setCarrito(carritoStorage);
     }
+  };
+  useEffect(() => {
+    carritoStorageFunc();
   }, []);
 
   //2. Pero cada vez que cambie carrito, guardaremos la información en el localStorage
