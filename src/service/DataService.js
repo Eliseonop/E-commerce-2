@@ -1,7 +1,7 @@
 import axios from "axios";
 
 //esta url e de mocp api
-const URL = `https://app-backend-ecommerce.herokuapp.com/productos`;
+const URL = `https://app-backend-ecommerce.herokuapp.com`;
 
 const LaData = async (busqueda = "") => {
   try {
@@ -23,6 +23,7 @@ const obtenerProductosPorPagina = async (pagina = 1, limite = 9) => {
 const obtenerProductoPorId = async (id) => {
   try {
       let { data } = await axios.get(`${URL}/${id}`);
+      console.log(data)
       return data;
   } catch (error) {
       throw error;
