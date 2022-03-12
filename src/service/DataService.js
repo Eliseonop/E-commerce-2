@@ -1,7 +1,7 @@
 import axios from "axios";
 
 //esta url e de mocp api
-const URL = `${process.env.REACT_APP_API}Productos`;
+const URL = `https://app-backend-ecommerce.herokuapp.com/productos`;
 
 const LaData = async (busqueda = "") => {
   try {
