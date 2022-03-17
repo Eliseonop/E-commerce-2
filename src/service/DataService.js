@@ -25,7 +25,8 @@ const obtenerProductosPorPagina = async (pagina = 1, limite = 9) => {
 const obtenerProductoPorId = async (id) => {
   try {
     let { data } = await axios.get(
-      `https://app-backend-ecommerce.herokuapp.com/producto/${id}`
+      "https://app-backend-ecommerce.herokuapp.com/producto/",
+      id
     );
 
     return data.producto;
