@@ -55,7 +55,7 @@ const AuthProvider = ({ children }) => {
     resetPassword,
     updateEmail,
     updatePassword,
-    signInGoogle
+    signInGoogle,
   };
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };

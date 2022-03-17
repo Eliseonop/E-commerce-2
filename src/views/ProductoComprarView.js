@@ -18,23 +18,23 @@ const ProductoComprarView = () => {
   const { anadirCarrito } = useContext(CarritoContext);
 
   const anadirCarritoContext = () => {
-    const { id, nombre, precio,imagen } = producto;
+    const { id, nombre, precio, imagen } = producto;
     const nuevoProducto = {
       id,
       nombre,
       precio,
       cantidad,
-      imagen
+      imagen,
     };
     anadirCarrito(nuevoProducto);
   };
 
   const getProducto = async () => {
-    let prodObtenido
+    let prodObtenido;
     try {
       const prodObtenido = await obtenerProductoPorId(id);
       setProducto(prodObtenido);
-      setLoading(false)
+      setLoading(false);
       console.log(prodObtenido);
       // if (typeof prodObtenido === "undefined") {
       //   Swal.fire({
@@ -57,11 +57,11 @@ const ProductoComprarView = () => {
       });
       navigate("/productos");
     }
-    console.log(prodObtenido)
-  }
+    console.log(prodObtenido);
+  };
   useEffect(() => {
     getProducto();
-  }, []);
+  }, [cantidad]);
   const modificarCantidad = (numero) => {
     if (cantidad + numero === 0 || cantidad + numero === 6) {
       return; //corta la ejecución

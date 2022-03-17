@@ -4,10 +4,10 @@ import Swal from "sweetalert2";
 import { useNavigate } from "react-router";
 import { AuthContext } from "../context/AuthContext";
 import Cargando from "../components/Cargando";
-import { Nav, Tab, Tabs } from "react-bootstrap";
+import { Tab, Tabs } from "react-bootstrap";
 import Button from "@restart/ui/esm/Button";
 import Formulario from "../components/Formulario";
-import "../css/hvh.css"
+import "../css/hvh.css";
 export default function CheckOutView() {
   const { currentUser } = useContext(AuthContext);
   const { carrito } = useContext(CarritoContext);
@@ -40,7 +40,7 @@ export default function CheckOutView() {
       setKey("envio");
     }
   };
-  
+
   return (
     <>
       {loading === true ? (
@@ -51,7 +51,7 @@ export default function CheckOutView() {
             <h2>
               <i className="fas fa-user-lock mb-2"></i> COMPRA SEGURA
             </h2>
-            
+
             <Tabs
               id="controlled-tab-example"
               activeKey={key}
@@ -73,16 +73,18 @@ export default function CheckOutView() {
                           </div>
                           <div className="badge text-dark text-decoration-underline   pt-3">
                             {/* toFixed(entero), me permite manejar decimales> en un número */}
-                            <h5>S/ {(prod.cantidad * prod.precio).toFixed(2)}</h5>
+                            <h5>
+                              S/ {(prod.cantidad * prod.precio).toFixed(2)}
+                            </h5>
                           </div>
                         </li>
                       ))}
                     </ul>
                   </div>
                   {/* pondré total */}
-                    {total > 0 ? (
-                      <>
-                  <div className="col-12 col-md-4 card">
+                  {total > 0 ? (
+                    <>
+                      <div className="col-12 col-md-4 card">
                         <h3 className="mt-4 fw-ligth">Resumen</h3>
                         <hr />
                         <div className=" d-flex justify-content-between my-2 ">
@@ -102,20 +104,21 @@ export default function CheckOutView() {
                           {" "}
                           Continuar
                         </Button>
-                        </div>
-                      </>
-                    ) : (
-                      <div className="col-12 col-md-12 card d-flex ">
-                      <div className="text-center">
-                        <h1>Todavía no ha agregado ningún producto. 🎅</h1></div>
                       </div>
-                    )}
+                    </>
+                  ) : (
+                    <div className="col-12 col-md-12 card d-flex ">
+                      <div className="text-center">
+                        <h1>Todavía no ha agregado ningún producto. 🎅</h1>
+                      </div>
+                    </div>
+                  )}
                 </div>
               </Tab>
               <Tab eventKey="envio" title="Envio" disabled>
                 <Formulario />
               </Tab>
-              {/* <Tab eventKey="contact" title="Pagar" disabled></Tab> */}
+              <Tab eventKey="contact" title="Pagar" disabled></Tab>
             </Tabs>
           </div>
         </>
