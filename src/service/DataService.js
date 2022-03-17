@@ -22,12 +22,10 @@ const obtenerProductosPorPagina = async (pagina = 1, limite = 9) => {
     throw error;
   }
 };
+const urlid = "https://app-backend-ecommerce.herokuapp.com/producto/";
 const obtenerProductoPorId = async (id) => {
   try {
-    let { data } = await axios.get(
-      "https://app-backend-ecommerce.herokuapp.com/producto/",
-      id
-    );
+    let { data } = await axios.get(`${urlid}${id}`);
 
     return data.producto;
   } catch (error) {
