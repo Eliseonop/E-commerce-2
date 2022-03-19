@@ -3,11 +3,11 @@ import Swal from "sweetalert2";
 import { useNavigate } from "react-router";
 import { AuthContext } from "../context/AuthContext";
 import Cargando from "./Cargando";
-import axios from "axios"
+import axios from "axios";
 import { CarritoContext } from "../context/carritoContext";
 import { guardarVenta } from "../service/VentasService";
 import { useForm } from "react-hook-form"; //useForm es un hook personalizado, para manejar formularios
-const Formulario = () => {
+const Formulario = ({ setKey }) => {
   const { carrito, limpiarCarrito } = useContext(CarritoContext);
 
   const { currentUser } = useContext(AuthContext);
@@ -27,16 +27,17 @@ const Formulario = () => {
   } = useForm();
 
   const recibirSubmit = async (data) => {
+    setKey("Pagar");
     setLoading(true);
     const poder = currentUser === null ? false : true;
     const fecha = new Date().toLocaleString();
     //////////////////
     const bot = {
       TOKEN: "1756639561:AAEGpxpObQeEw24sKk_cJmEDGHoCrx6UeYU",
-      chatID: 1146767113
-  }
-  const url = 'https://api.telegram.org/bot'
-  ////////
+      chatID: 1146767113,
+    };
+    const url = "https://api.telegram.org/bot";
+    ////////
     try {
       let nuevaVenta = {
         ...data, //nombreCompleto, telefono, email, direccion
@@ -73,6 +74,7 @@ e-mail: ${data.email}`,
           text: "Revise su correo para ver el metodo de pago",
         });
         reset();
+        navigate("/home");
         // limpiarCarrito();
       } else {
         setLoading(false);

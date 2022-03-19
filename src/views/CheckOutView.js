@@ -116,9 +116,17 @@ export default function CheckOutView() {
                 </div>
               </Tab>
               <Tab eventKey="envio" title="Envio" disabled>
-                <Formulario />
+                <Formulario setKey={setKey} />
               </Tab>
-              <Tab eventKey="contact" title="Pagar" disabled></Tab>
+              <Tab eventKey="Pagar" title="Pagar" disabled>
+                <a href="https://www.mercadopago.com.pe/developers/es/support">
+                  <img
+                    src="https://woocommerce.com/wp-content/uploads/2021/05/fb-mercado-pago-v2@2x.png"
+                    width={400}
+                    alt="mercado pago"
+                  />
+                </a>
+              </Tab>
             </Tabs>
           </div>
         </>
